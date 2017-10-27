@@ -1,14 +1,85 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>
-      Ionic Blank
+    <ion-buttons start>
+      <button ion-button>
+    <ion-icon large name="close"></ion-icon>
+    </button>
+    </ion-buttons>
+    <ion-buttons end>
+      <button ion-button end>
+      Confirmar
+      </button>
+    </ion-buttons>
+
+
+    <ion-title middle>
+      Novo Usuário
     </ion-title>
+
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+
+  
+    <button ion-button icon-start clear icon-only>
+    <ion-icon name="logo-facebook"></ion-icon>
+    Importe seus dados do facebook
+    </button>
+  
+
+  <ion-card></ion-card>
+
+  <ion-list> 
+
+      <ion-item>
+        <ion-icon item-left name="mail"></ion-icon>
+        <ion-label stacked>Email</ion-label>
+        <ion-input type="text" name="email" placeholder="Digite seu email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon item-left name="mail"></ion-icon>
+        <ion-label stacked>Confirme seu email</ion-label>
+        <ion-input type="text" name="emailConfirm" placeholder="Digite seu email"></ion-input>
+      </ion-item>
+
+       <ion-item>         
+        <ion-icon item-left name="lock"></ion-icon>
+        <ion-label stacked>Senha</ion-label>
+        <ion-input type="password" name="password" placeholder="******"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon item-left name="md-person"></ion-icon>
+        <ion-label stacked>Nome Completo</ion-label>
+        <ion-input type="text" name="name" placeholder="Digite seu nome"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon item-left name="call"></ion-icon>
+        <ion-label stacked>Telefone celular (xx)xxxxx-xxxx</ion-label>
+        <ion-input type="text" name="phone" placeholder="Digite seu telefone celular"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon item-left name="home"></ion-icon>
+        <ion-label stacked>Cidade onde mora</ion-label>
+        <ion-input type="text" name="phone" placeholder="Nome da cidade - UF"></ion-input>
+      </ion-item>
+
+    </ion-list>
+
+    
+    
+    
+    <ion-list no-lines class="adjusted-margin">
+      <ion-item>
+        <ion-label class="minor-text">Aceito o <a href="#">Termo de uso & Política de privacidade</a></ion-label>
+    <ion-checkbox item-start color="primary" checked="false"></ion-checkbox>
+      </ion-item>
+    </ion-list>
+      
+  
+
 </ion-content>
