@@ -42,14 +42,15 @@
     </ion-row>
   </ion-grid>
 
+  <form novalidate>
   <ion-list > 
-
+    
       <ion-item>
         <ion-icon item-left name="mail"></ion-icon>
         <ion-label stacked>Email</ion-label>
         <ion-input type="text" name="username"
         id="username" [(ngModel)]="username" 
-        placeholder="Digite seu email" required></ion-input>
+        placeholder="Digite seu email" ng-required="true"></ion-input>
       </ion-item>
 
       <ion-item>
@@ -93,6 +94,7 @@
       </ion-item>
 
     </ion-list>
+    </form>
 
     
     
