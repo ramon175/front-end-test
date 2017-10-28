@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController, Toggle, AlertController } from 'ionic-angular';
 import { User } from '../../models/user';
+import { Http } from '@angular/http';
 
 @Component({
   selector: 'page-home',
@@ -15,12 +16,14 @@ export class HomePage {
   mobilePhone: string;
   livesPlace: string;
   profilePicture: string;
-
-  checkbox: boolean;
   
 
+  checkbox: boolean;
+  google: any;
+
   constructor(public navCtrl: NavController, 
-              public alertCtrl: AlertController) {
+              public alertCtrl: AlertController,
+              public http: Http) {
 
   }
 
@@ -44,9 +47,18 @@ onToggle(toggle: Toggle){
                         this.password, this.fullName, this.mobilePhone,
                         this.livesPlace, this.profilePicture);
 
-    console.log(JSON.stringify(user));
-  }else{
-    let alert = this.alertCtrl.create({
+    console.log(JSON.stringify(user), user.username == user.usernameConfirmation);
+
+    let data = {data:JSON.stringify(user)};
+
+    let url ='http://yuudy2dev.skruuble.com/users/register';
+
+    this.http.post(url, data).subscribe(data => console.log(data));
+
+
+
+    } else {
+      let alert = this.alertCtrl.create({
       title: "Erro",
       subTitle:'Para continuar você deve aceitar os termos e condições.',
       buttons:['Ok']
