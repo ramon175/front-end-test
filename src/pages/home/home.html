@@ -6,7 +6,7 @@
     </button>
     </ion-buttons>
     <ion-buttons end>
-      <button ion-button end>
+      <button ion-button end (click)="onConfirm()">
       Confirmar
       </button>
     </ion-buttons>
@@ -29,43 +29,56 @@
   
 
   <ion-card></ion-card>
+  
 
-  <ion-list> 
+  <ion-list > 
 
       <ion-item>
         <ion-icon item-left name="mail"></ion-icon>
         <ion-label stacked>Email</ion-label>
-        <ion-input type="text" name="email" placeholder="Digite seu email"></ion-input>
+        <ion-input type="text" name="username"
+        id="username" [(ngModel)]="username" 
+        placeholder="Digite seu email" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon item-left name="mail"></ion-icon>
         <ion-label stacked>Confirme seu email</ion-label>
-        <ion-input type="text" name="emailConfirm" placeholder="Digite seu email"></ion-input>
+        <ion-input type="text" name="username_confirmation"
+         id="username_confirmation" [(ngModel)]="usernameConfirmation" 
+         placeholder="Digite seu email" required></ion-input>
       </ion-item>
 
        <ion-item>         
         <ion-icon item-left name="lock"></ion-icon>
         <ion-label stacked>Senha</ion-label>
-        <ion-input type="password" name="password" placeholder="******"></ion-input>
+        <ion-input type="password" name="password"
+        id="password" [(ngModel)]="password"
+        placeholder="******" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon item-left name="md-person"></ion-icon>
         <ion-label stacked>Nome Completo</ion-label>
-        <ion-input type="text" name="name" placeholder="Digite seu nome"></ion-input>
+        <ion-input type="text" name="fullname"
+        id="fullname" [(ngModel)]="fullName" 
+        placeholder="Digite seu nome" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon item-left name="call"></ion-icon>
         <ion-label stacked>Telefone celular (xx)xxxxx-xxxx</ion-label>
-        <ion-input type="text" name="phone" placeholder="Digite seu telefone celular"></ion-input>
+        <ion-input type="text" name="mobile_phone" 
+        id="mobile_phone" [(ngModel)]="mobilePhone" 
+        placeholder="Digite seu telefone celular" required></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-icon item-left name="home"></ion-icon>
         <ion-label stacked>Cidade onde mora</ion-label>
-        <ion-input type="text" name="phone" placeholder="Nome da cidade - UF"></ion-input>
+        <ion-input type="text" name="livesplace" 
+        id="livesplace" [(ngModel)]="livesPlace" 
+        placeholder="Nome da cidade - UF" required></ion-input>
       </ion-item>
 
     </ion-list>
@@ -76,10 +89,12 @@
     <ion-list no-lines class="adjusted-margin">
       <ion-item>
         <ion-label class="minor-text">Aceito o <a href="#">Termo de uso & Política de privacidade</a></ion-label>
-    <ion-checkbox item-start color="primary" checked="false"></ion-checkbox>
+        <ion-checkbox item-start color="primary" checked="false" (ionChange)="onToggle($event)" ></ion-checkbox>
       </ion-item>
     </ion-list>
       
   
 
 </ion-content>
+
+
